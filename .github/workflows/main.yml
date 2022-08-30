@@ -1,1 +1,27 @@
+name: Professional Website
 
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: Deploy changes
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Connecting to Ekodevs server to run ssh commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.EKODEVS_SERVER_IP }}
+          username: ${{ secrets.EKODEVS_SERVER_USER }}
+          key: ${{ secrets.EKODEVS_SERVER_SSH_KEY }}
+          script:
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
+            cd /var/www/professional-website
+            nvm use 16.17.0
+            git pull
+            npm install
+            npm run build
+      - name: Finish deployment
+        run: echo "Deployment was successfull!!"
