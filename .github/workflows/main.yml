@@ -18,7 +18,7 @@ jobs:
           script:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            cd /var/www/professional-website
+            cd /var/www/my-web-presentation
             nvm use 16.17.0
             git pull
             npm install
