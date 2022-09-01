@@ -1,7 +1,8 @@
 @import './assets/style/lib/w3.scss';
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
+body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
+.w3-row-padding img { margin-bottom: 12px }
 
+// Engineer images carousel
 .sidebar {
   @extend .w3-sidebar, .w3-hide-medium, .w3-hide-small;
   width: 40%;
@@ -9,7 +10,140 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('./assets/profile_girl.jpg');
     min-height: 100%;
+  }
+}
+
+// Navbar
+.hidden-navbar {
+  display: none;
+}
+
+.visible-navbar {
+  display: block;
+}
+
+.navbar {
+  @extend .w3-sidebar, .w3-black, .w3-animate-right, .w3-xxlarge;
+  padding-top: 150px;
+  right: 0;
+  z-index: 2;
+  width: 60%;
+
+  &__btn {
+    @extend .w3-button, .w3-black, .w3-xxxlarge, .w3-display-topright;
+    padding: 0 12px
+  }
+
+  &__options {
+    @extend .w3-bar-block, .w3-center;
+    .link {
+      @extend .w3-bar-item, .w3-button, .w3-text-grey, .w3-hover-black;
+    }
+  }
+}
+ 
+// Page Content
+.content {
+  @extend .w3-main, .w3-padding-large;
+  margin-left: 40%;
+
+  &__nav-toggle {
+    @extend .w3-button, .w3-top, .w3-white, .w3-xxlarge, .w3-text-grey, .w3-hover-text-black;
+    width: auto;
+    right: 0;
+  }
+
+  &__header {
+    @extend .w3-container, .w3-center;
+    padding: 128px 16px;
+
+    .my-name {
+      @extend .w3-jumbo;
+      font-weight: bolder;
+
+      @media (max-width: 573px) {
+        & {
+          font-size: 50px !important;
+        }
+      }
+    }
+
+    .mobile-carousel {
+      @extend .w3-hide-large, .w3-round;
+      &__img {
+        @extend .w3-image;
+      }
+      @media (max-width: 991px) {
+        & {
+          display: block;
+          width: 60%;
+          margin: auto;
+        }
+      }
+      @media (max-width: 573px) {
+        & {
+          width: 100%;
+        }
+      }
+    }
+
+    .resume-btn {
+      @extend .w3-button, .w3-light-grey, .w3-padding-large, .w3-margin-top;
+    }
+  }
+
+  &__portfolio {
+    @extend .w3-padding-32, .w3-content;
+
+    .photos-grid {
+      @extend .w3-row-padding;
+      margin: 0 -16px;
+
+      &__half {
+        @extend .w3-half;
+
+        a img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__about {
+    @extend .w3-content, .w3-justify, .w3-text-grey, .w3-padding-32;
+  }
+      
+  &__skills {
+    @extend .w3-content, .w3-justify, .w3-text-grey, .w3-padding-32;
+  }
+      
+  &__testimonials {
+    @extend .w3-content, .w3-justify, .w3-text-grey, .w3-padding-32;
+    .testimonial-avatar {
+      @extend .w3-left, .w3-circle, .w3-margin-right;
+      width: 80px;
+    }
+    
+    .testimonial-name-position {
+      @extend .w3-large, .w3-text-black, .w3-margin-right;
+    }
+
+    .counters {
+      @extend .w3-row, .w3-center, .w3-dark-grey, .w3-padding-16, .w3-section;
+      &__item {
+        @extend .w3-quarter, .w3-section;
+      }
+    }
+  }
+
+  &__contact {
+    @extend .w3-padding-32, .w3-content, .w3-text-grey;
+    margin-bottom: 64px;
+  }
+
+  &__footer {
+    @extend .w3-container, .w3-padding-64, .w3-light-grey, .w3-center, .w3-opacity, .w3-xlarge;
+    margin: -24px;
   }
 }
