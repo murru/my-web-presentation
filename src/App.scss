@@ -2,16 +2,25 @@
 body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
 .w3-row-padding img { margin-bottom: 12px }
 
+.carousel-slider, .slider-wrapper, .slider {
+  height: 100% !important;
+}
+
+.img-carousel {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100%;
+}
+
+.mobile-carousel-img {
+  @extend .w3-image;
+}
+
 // Engineer images carousel
 .sidebar {
   @extend .w3-sidebar, .w3-hide-medium, .w3-hide-small;
   width: 40%;
-  &__img {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100%;
-  }
 }
 
 // Navbar
@@ -71,9 +80,9 @@ body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
 
     .mobile-carousel {
       @extend .w3-hide-large, .w3-round;
-      &__img {
+      /* &__img {
         @extend .w3-image;
-      }
+      } */
       @media (max-width: 991px) {
         & {
           display: block;
@@ -147,3 +156,9 @@ body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
     margin: -24px;
   }
 }
+
+/* @media (min-width: 993px) {
+  & {
+    width: 100%;
+  }
+} */

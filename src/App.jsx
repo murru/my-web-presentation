@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import profileGirl from './assets/profile_girl.jpg'
 import wedding from './assets/wedding.jpg'
 import rocks from './assets/rocks.jpg'
 import sailBoat from './assets/sailboat.jpg'
@@ -7,11 +6,12 @@ import underWater from './assets/underwater.jpg'
 import chef from './assets/chef.jpg'
 import p6 from './assets/p6.jpg'
 import avatarSmoke from './assets/avatar_smoke.jpg'
+import profileGirl from './assets/profile_girl.jpg'
 import bandMember from './assets/bandmember.jpg'
 import avatarG2 from './assets/avatar_g2.jpg'
-import map from './assets/map.jpg'
 import Navbar from './components/Navbar'
 import './App.scss'
+import SlideCarousel from './components/SlideCarousel'
 
 export default function App() {
   const [showNav, setShowNav] = useState(false)
@@ -21,9 +21,7 @@ export default function App() {
   return (
     <>
       {/* Engineer images carousel */}
-      <div className="sidebar">
-        <div className="sidebar__img" style={{ backgroundImage: `url(${profileGirl})` }}></div>
-      </div>
+      <SlideCarousel mobile={ false } />
 
       {/* Navbar */}
       <Navbar showNav={ showNav } setShowNav={ setShowNav } />
@@ -40,10 +38,13 @@ export default function App() {
         <header id="home" className="content__header">
           <h1 className="my-name">Ernesto Murrugarra</h1>
           <p>Informatics & Software Engineer</p>
+
           {/* Mobile carousel */}
-          <div className="mobile-carousel">
+          <SlideCarousel mobile={ true } />
+          {/* <div className="mobile-carousel">
             <img className="mobile-carousel__img" src={ profileGirl } alt="" />
-          </div>
+          </div> */}
+          
           {/* Download resume btn */}
           <button className="resume-btn">
             <i className="fa fa-download"></i> Download Resume
