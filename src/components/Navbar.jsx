@@ -6,6 +6,10 @@ export default function Navbar({ showNav, setShowNav }) {
   function changeState() {
     setShowNav(!showNav)
   }
+
+  function closeNav() {
+    setShowNav(false)
+  }
   return (
     <nav className={ reactiveClasses } id="mySidebar">
       <button
@@ -15,12 +19,11 @@ export default function Navbar({ showNav, setShowNav }) {
         <i className="fa fa-remove"></i>
       </button>
       <div className="navbar__options">
-        <a href="#home" className="link">Home</a>
-        <a href="#portfolio" className="link">My Portfolio</a>
-        <a href="#about" className="link">About</a>
-        <a href="#skills" className="link">Skills</a>
-        <a href="#testimonials" className="link">Testimonials</a>
-        <a href="#contact" className="link">Contact</a>
+        <a href="#home" className="link" onClick={ () => closeNav() }>Home</a>
+        <a href="#portfolio" className="link" onClick={ () => closeNav() }>My Portfolio</a>
+        <a href="#skills" className="link" onClick={ () => closeNav() }>Skills</a>
+        <a href="#testimonials" className="link" onClick={ () => closeNav() }>Testimonials</a>
+        <a href="#contact" className="link" onClick={ () => closeNav() }>Contact</a>
       </div>
     </nav>
   )

@@ -6,18 +6,23 @@ import underWater from './assets/underwater.jpg'
 import chef from './assets/chef.jpg'
 import p6 from './assets/p6.jpg'
 import avatarSmoke from './assets/avatar_smoke.jpg'
-import profileGirl from './assets/profile_girl.jpg'
 import bandMember from './assets/bandmember.jpg'
 import avatarG2 from './assets/avatar_g2.jpg'
 import Navbar from './components/Navbar'
 import './App.scss'
 import SlideCarousel from './components/SlideCarousel'
+import Introduction from './components/Introduction'
+import ThemeButton from './components/ThemeButton'
+import LangSelector from './components/LangSelector'
 
 export default function App() {
   const [showNav, setShowNav] = useState(false)
+  const [showLangs, setShowLangs] = useState(false)
+  const [lang, setLang] = useState('en')
   function toggleNavbar() {
     setShowNav(!showNav)
   }
+
   return (
     <>
       {/* Engineer images carousel */}
@@ -30,9 +35,18 @@ export default function App() {
       <div className="content">
 
         {/* Navbar Toggler */}
-        <span className="content__nav-toggle" onClick={ () => toggleNavbar() }>
-          <i className="fa fa-bars"></i>
-        </span>
+        <div className="content__nav-toggle">
+          <span className="button" onClick={ () => toggleNavbar() }>
+            <i className="fa-solid fa-bars"></i>
+          </span><br />
+          <ThemeButton /><br />
+          <LangSelector
+            showLangs={ showLangs }
+            setShowLangs={ setShowLangs }
+            lang={ lang }
+            setLang={ setLang }
+          />
+        </div>
 
         {/* Header */}
         <header id="home" className="content__header">
@@ -41,14 +55,15 @@ export default function App() {
 
           {/* Mobile carousel */}
           <SlideCarousel mobile={ true } />
-          {/* <div className="mobile-carousel">
-            <img className="mobile-carousel__img" src={ profileGirl } alt="" />
-          </div> */}
           
           {/* Download resume btn */}
           <button className="resume-btn">
             <i className="fa fa-download"></i> Download Resume
           </button>
+
+          <div className="introduction">
+            <Introduction />
+          </div>
         </header>
 
         {/* Portfolio */}
@@ -87,13 +102,6 @@ export default function App() {
             {/* End photo grid */}
           </div>
         {/* End Portfolio Section */}
-        </div>
-
-        {/* About */}
-        <div id="about" className="content__about">
-          <h2>About</h2>
-          <hr className="w3-opacity" />
-          <p>More than 9 years of experience developing software. I consider myself a consultant at this point of my career thanks to all the projects and companies I've worked on and with.<br /><br />I can make a software from scratch, starting with the design of database and processes up to the coding of back end and front end.<br /><br />I have solid understanding in terms of software engineering and software architecture. I've been backed up about this with most of my most important clients in this list.<br /><br />I can setup a cloud platform to deploy all the software products we build (as a team).<br /><br />I'm in love of this industry and of my career and I enjoy a lot doing what I do.<br /><br />What I love the most is what I learned from all the awesome people I've ever worked with, and I'm always excited to learn even more from all companies I still have to work with in the future.</p>
         </div>
 
         {/* Skills */}
