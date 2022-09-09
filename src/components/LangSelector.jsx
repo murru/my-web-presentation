@@ -19,7 +19,7 @@ export default function LangSelector({ showLangs, setShowLangs, lang, setLang })
   }
   return (
     <div className="lang-dropdown">
-      <button className="lang-dropdown__btn" onClick={ () => changeState() }>
+      <button className="lang-dropdown__btn" onClick={ () => changeState() } title="Change language">
         <i className="fa-solid fa-globe"></i>
       </button>
       <div className={ reactiveClasses }>
