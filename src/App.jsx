@@ -64,11 +64,14 @@ export default function App() {
           <button className="resume-btn">
             <i className="fa fa-download"></i> Download Resume
           </button>
-
-          <div className="introduction">
-            <Introduction />
-          </div>
         </header>
+
+        {/* About me */}
+        <div id="aboutMe" className="content__testimonials">
+          <h2>About Me</h2>
+          <hr className="w3-opacity" />
+          <Introduction />
+        </div>
 
         {/* Testimonials */}
         <div id="testimonials" className="content__testimonials">
