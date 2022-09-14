@@ -21,8 +21,6 @@ export default function Navbar({ showNav, setShowNav }) {
       <div className="navbar__options">
         <a href="#home" className="link" onClick={ () => closeNav() }>Home</a>
         <a href="#aboutMe" className="link" onClick={ () => closeNav() }>About Me</a>
-        <a href="#testimonials" className="link" onClick={ () => closeNav() }>Testimonials</a>
-        <a href="#showcase" className="link" onClick={ () => closeNav() }>Showcase</a>
         <a href="#portfolio" className="link" onClick={ () => closeNav() }>Portfolio</a>
         <a href="#skills" className="link" onClick={ () => closeNav() }>Skills</a>
         <a href="#contact" className="link" onClick={ () => closeNav() }>Contact</a>
