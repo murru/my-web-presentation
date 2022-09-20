@@ -8,16 +8,12 @@ export default function NavToggler({ setShowNav, showNav }) {
   function toggleNavbar() {
     setShowNav(!showNav)
   }
-  const [theme, setTheme] = useState('light')
   return (
     <div className="content__nav-toggle">
       <span className="button" onClick={ () => toggleNavbar() }>
         <i className="fa-solid fa-bars"></i>
       </span><br />
-      <ThemeButton
-        theme={ theme }
-        setTheme={ setTheme }
-      /><br />
+      <ThemeButton /><br />
       <LangSelector
         showLangs={ showLangs }
         setShowLangs={ setShowLangs }

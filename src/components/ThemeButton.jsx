@@ -1,18 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
+import { ThemeContext } from "../context/ThemeContext"
 
-export default function ThemeButton({ theme, setTheme }) {
-  function changeTheme($evt, flag) {
-    setTheme(flag)
-  }
+export default function ThemeButton() {
+  const { theme, toggleTheme } = useContext(ThemeContext)
   return (
     <>
       {theme === 'light' &&
-        <button type="button" className="theme-button" title="Change to dark theme" onClick={ ($evt) => changeTheme($evt, 'dark') }>
+        <button type="button" className="theme-button" title="Change to dark theme" onClick={ toggleTheme }>
           <i className="fa-solid fa-moon"></i>
         </button>
       }
       {theme === 'dark' &&
-        <button type="button" className="theme-button" title="Change to light theme" onClick={ ($evt) => changeTheme($evt, 'light') }>
+        <button type="button" className="theme-button" title="Change to light theme" onClick={ toggleTheme }>
           <i className="fa-solid fa-sun"></i>
         </button>
       }

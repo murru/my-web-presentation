@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './App.scss'
+import { ThemeContext } from './context/ThemeContext'
 import SlideCarousel from './components/SlideCarousel'
 import Navbar from './components/Navbar'
 import NavToggler from './components/NavToggler'
@@ -9,42 +9,50 @@ import Portfolio from './components/Portfolio'
 import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import './App.scss'
 
 export default function App() {
+  const [theme, setTheme] = useState('light')
   const [showNav, setShowNav] = useState(false)
 
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
+  }
+
   return (
-    <>
-      {/* Engineer images carousel */}
-      <SlideCarousel mobile={ false } />
+    <ThemeContext.Provider value={ { theme, toggleTheme }}>
+      <div id={theme}>
+        {/* Engineer images carousel */}
+        <SlideCarousel mobile={ false } />
 
-      {/* Navbar */}
-      <Navbar showNav={ showNav } setShowNav={ setShowNav } />
+        {/* Navbar */}
+        <Navbar showNav={ showNav } setShowNav={ setShowNav } />
 
-      {/* Page Content */}
-      <div className="content">
+        {/* Page Content */}
+        <div className="content">
 
-        {/* Navbar Toggler */}
-        <NavToggler showNav={ showNav } setShowNav={ setShowNav } />
+          {/* Navbar Toggler */}
+          <NavToggler showNav={ showNav } setShowNav={ setShowNav } />
 
-        {/* Header */}
-        <Header />
+          {/* Header */}
+          <Header />
 
-        {/* About me */}
-        <AboutMe />
+          {/* About me */}
+          <AboutMe />
 
-        {/* Portfolio */}
-        <Portfolio />
+          {/* Portfolio */}
+          <Portfolio />
 
-        {/* Skills */}
-        <Skills />
+          {/* Skills */}
+          <Skills />
 
-        {/* Contact */}
-        <Contact />
-        
-        {/* Footer */}
-        <Footer />
+          {/* Contact */}
+          <Contact />
+          
+          {/* Footer */}
+          <Footer />
+        </div>
       </div>
-    </>
+    </ThemeContext.Provider>
   )
 }

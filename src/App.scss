@@ -73,6 +73,7 @@ body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
 
     .theme-button {
       @extend .w3-button, .w3-hover-text-black, .w3-xlarge;
+      color: #04293A;
       width: 100%;
     }
 
@@ -128,8 +129,13 @@ body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
     }
   }
 
+  &__about-me {
+    @extend .w3-padding-32, .w3-content, .w3-text-grey;
+    margin-bottom: 64px;
+  }
+
   &__portfolio {
-    @extend .w3-padding-32, .w3-content;
+    @extend .w3-padding-32, .w3-content, .w3-text-grey;
 
     .photos-grid {
       @extend .w3-row-padding;
@@ -138,8 +144,43 @@ body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
       &__half {
         @extend .w3-half;
 
-        a img {
-          width: 100%;
+        .img-container {
+          position: relative;
+          &__port-img {
+            backface-visibility: hidden;
+            opacity: 1;
+            transition: .5s ease;
+            width: 100%;
+          }
+
+          &__middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+
+            .techs {
+              &__tech-img {
+                width: 100px;
+              }
+            }
+          }
+
+          &:hover {
+            .img-container__port-img {
+              opacity: 0.3;
+            }
+          }
+
+          &:hover {
+            .img-container__middle {
+              opacity: 1;
+            }
+          }
         }
       }
     }
@@ -183,4 +224,52 @@ body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
     }
     margin: -24px;
   }
+}
+
+// Themes
+#light {
+  background-color: #FFFF;
+}
+
+#dark {
+  background-color: #041C32;
+  color: white;
+}
+
+#dark .content__nav-toggle {
+  background-color: #041C32 !important;
+}
+
+#dark .content__nav-toggle .button, #dark .content__nav-toggle .lang-dropdown, #dark .content__nav-toggle .theme-button {
+  color: #ECB365 !important;
+}
+
+#dark .lang-dropdown__dropdown {
+  background-color: #064663 !important;
+  border-color: #04293A !important;
+  color: #FFFF !important;
+}
+
+#dark .selected-lang {
+  border-color: #ECB365 !important;
+}
+
+#dark .resume-btn {
+  background-color: #064663 !important;
+  color: #FFFF !important;
+}
+
+#dark .content__nav-toggle .button,
+#dark .content__nav-toggle .lang-dropdown__btn,
+#dark .content__about-me,
+#dark .content__about-me,
+#dark .content__portfolio,
+#dark .content__skills,
+#dark .content__contact,
+#dark .content__footer {
+  color: #FFFF !important;
+}
+
+#dark .content__footer {
+  background-color: #064663 !important;
 }
