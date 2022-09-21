@@ -87,9 +87,11 @@ body {
     @extend .w3-top, .w3-white, .w3-xxlarge, .w3-text-grey;
     width: auto;
     right: 0;
+    transition-duration: 1s;
 
     .button {
       @extend .w3-button, .w3-hover-text-black, .w3-xlarge;
+      transition-duration: 1s;
     }
 
     .theme-button {
@@ -102,6 +104,7 @@ body {
       @extend .w3-dropdown-click;
       &__btn {
         @extend .w3-button, .w3-hover-text-black, .w3-xlarge;
+        transition-duration: 1s;
       }
 
       &__dropdown {
@@ -147,16 +150,19 @@ body {
 
     .resume-btn {
       @extend .w3-button, .w3-light-grey, .w3-padding-large, .w3-margin-top, .w3-large;
+      transition-duration: 1s;
     }
   }
 
   &__about-me {
     @extend .w3-padding-32, .w3-content, .w3-text-grey;
+    transition-duration: 1s;
     margin-bottom: 64px;
   }
 
   &__portfolio {
     @extend .w3-padding-32, .w3-content, .w3-text-grey;
+    transition-duration: 1s;
 
     .photos-grid {
       @extend .w3-row-padding;
@@ -211,6 +217,7 @@ body {
       
   &__skills {
     @extend .w3-content, .w3-justify, .w3-text-grey, .w3-padding-32;
+    transition-duration: 1s;
     .skills-logos {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -243,11 +250,13 @@ body {
 
   &__contact {
     @extend .w3-padding-32, .w3-content, .w3-text-grey;
+    transition-duration: 1s;
     margin-bottom: 64px;
   }
 
   &__footer {
     @extend .w3-container, .w3-padding-64, .w3-light-grey, .w3-center, .w3-opacity, .w3-xlarge;
+    transition-duration: 1s;
     .rrss {
       width: fit-content;
       margin: 0 auto;
@@ -261,47 +270,55 @@ body {
 // Themes
 #light {
   background-color: #FFFF;
+  transition-duration: 1s;
 }
 
 #dark {
   background-color: #041C32;
   color: white;
+  transition-duration: 1s;
 }
 
 #dark .content__nav-toggle {
   background-color: #041C32 !important;
+  transition-duration: 1s;
 }
 
 #dark .content__nav-toggle .button, #dark .content__nav-toggle .lang-dropdown, #dark .content__nav-toggle .theme-button {
   color: #ECB365 !important;
+  transition-duration: 1s;
 }
 
 #dark .lang-dropdown__dropdown {
   background-color: #064663 !important;
   border-color: #04293A !important;
   color: #FFFF !important;
+  transition-duration: 1s;
 }
 
 #dark .selected-lang {
   border-color: #ECB365 !important;
+  transition-duration: 1s;
 }
 
 #dark .resume-btn {
   background-color: #064663 !important;
   color: #FFFF !important;
+  transition-duration: 1s;
 }
 
 #dark .content__nav-toggle .button,
 #dark .content__nav-toggle .lang-dropdown__btn,
-#dark .content__about-me,
 #dark .content__about-me,
 #dark .content__portfolio,
 #dark .content__skills,
 #dark .content__contact,
 #dark .content__footer {
   color: #FFFF !important;
+  transition-duration: 1s;
 }
 
 #dark .content__footer {
   background-color: #064663 !important;
+  transition-duration: 1s;
 }
