@@ -1,5 +1,9 @@
 @import './assets/style/lib/w3.scss';
-body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;500&family=Inter:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Inconsolata', monospace;
+}
 
 .wa-icon-color {
   color: #3db44c;
@@ -142,7 +146,7 @@ body, h1,h2,h3,h4,h5,h6 { font-family: "Montserrat", sans-serif }
     }
 
     .resume-btn {
-      @extend .w3-button, .w3-light-grey, .w3-padding-large, .w3-margin-top;
+      @extend .w3-button, .w3-light-grey, .w3-padding-large, .w3-margin-top, .w3-large;
     }
   }
 

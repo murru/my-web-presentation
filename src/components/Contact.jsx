@@ -5,10 +5,10 @@ export default function Contact() {
     <div id="contact" className="content__contact">
       <h2>Contact Me</h2>
       <hr className="w3-opacity" />
-      <p className="w3-center">Lets get in touch and talk about your next project</p>
+      <p className="w3-center w3-large">Lets get in touch and talk about your next project</p>
       <div className="w3-center w3-xxxlarge">
         <a className="w3-padding" href="https://wa.me/+584142430801" target="_blank">
-          <i class="fa-brands fa-whatsapp w3-hover-opacity wa-icon-color"></i>
+          <i className="fa-brands fa-whatsapp w3-hover-opacity wa-icon-color"></i>
         </a>
         <a className="w3-padding" href="https://www.linkedin.com/in/murrugarra/" target="_blank">
           <i className="fa fa-linkedin w3-hover-opacity li-icon-color"></i>

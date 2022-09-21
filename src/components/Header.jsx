@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header id="home" className="content__header">
       <h1 className="my-name">Ernesto Murrugarra</h1>
-      <p>Software Engineer</p>
+      <p className="w3-xxlarge">Software Engineer</p>
 
       {/* Mobile carousel */}
       <SlideCarousel mobile={ true } />
