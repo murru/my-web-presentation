@@ -28,24 +28,54 @@ export default function Portfolio() {
           </a>
           <a className="img-container" href="https://fttalent.work" target="_blank">
             <img className="img-container__port-img" src={ rocks } alt="" />
+            <div className="img-container__middle">
+              <div className="techs">
+                <img className="techs__tech-img" src={ nuxtJs } alt="" /><img className="techs__tech-img" src={ laravel } alt="" /><img className="techs__tech-img" src={ nuxtJs } alt="" />
+              </div>
+            </div>
           </a>
           <a className="img-container" href="https://fttalent.work" target="_blank">
             <img className="img-container__port-img" src={ sailBoat } alt="" />
+            <div className="img-container__middle">
+              <div className="techs">
+                <img className="techs__tech-img" src={ nuxtJs } alt="" /><img className="techs__tech-img" src={ laravel } alt="" /><img className="techs__tech-img" src={ nuxtJs } alt="" />
+              </div>
+            </div>
           </a>
         </div>
 
         <div className="photos-grid__half">
           <a className="img-container" href="https://fttalent.work" target="_blank">
             <img className="img-container__port-img" src={ underWater } alt="" />
+            <div className="img-container__middle">
+              <div className="techs">
+                <img className="techs__tech-img" src={ nuxtJs } alt="" /><img className="techs__tech-img" src={ laravel } alt="" /><img className="techs__tech-img" src={ nuxtJs } alt="" />
+              </div>
+            </div>
           </a>
           <a className="img-container" href="https://fttalent.work" target="_blank">
             <img className="img-container__port-img" src={ chef } alt="" />
+            <div className="img-container__middle">
+              <div className="techs">
+                <img className="techs__tech-img" src={ nuxtJs } alt="" /><img className="techs__tech-img" src={ laravel } alt="" /><img className="techs__tech-img" src={ nuxtJs } alt="" />
+              </div>
+            </div>
           </a>
           <a className="img-container" href="https://fttalent.work" target="_blank">
             <img className="img-container__port-img" src={ wedding } alt="" />
+            <div className="img-container__middle">
+              <div className="techs">
+                <img className="techs__tech-img" src={ nuxtJs } alt="" /><img className="techs__tech-img" src={ laravel } alt="" /><img className="techs__tech-img" src={ nuxtJs } alt="" />
+              </div>
+            </div>
           </a>
           <a className="img-container" href="https://fttalent.work" target="_blank">
             <img className="img-container__port-img" src={ p6 } alt="" />
+            <div className="img-container__middle">
+              <div className="techs">
+                <img className="techs__tech-img" src={ nuxtJs } alt="" /><img className="techs__tech-img" src={ laravel } alt="" /><img className="techs__tech-img" src={ nuxtJs } alt="" />
+              </div>
+            </div>
           </a>
         </div>
         {/* End photo grid */}
