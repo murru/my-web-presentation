@@ -11,9 +11,9 @@ export default function Header() {
       <SlideCarousel mobile={ true } />
       
       {/* Download resume btn */}
-      <button className="resume-btn">
+      <a className="resume-btn" href="https://docs.google.com/document/d/1WGBgwlq3rx9BywEE882D4tSXkxIq_gp_W16t8tkyYNo/edit?usp=sharing" target="_blank">
         <i className="fa fa-download"></i> Download Resume
-      </button>
+      </a>
     </header>
   )
 }
