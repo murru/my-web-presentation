@@ -228,6 +228,14 @@ body {
       .logo {
         height: 60px;
         width: auto;
+
+        @media (max-width: 991px) {
+          height: 45px;
+        }
+
+        @media (max-width: 573px) {
+          height: 30px;
+        }
       }
     }
   }
@@ -260,13 +268,19 @@ body {
   &__footer {
     @extend .w3-container, .w3-padding-64, .w3-light-grey, .w3-center, .w3-opacity, .w3-xlarge;
     transition-duration: 1s;
-    .rrss {
-      width: fit-content;
-      margin: 0 auto;
-      display: flex;
-      gap: 1em;
-    }
     margin: -24px;
+    .authors {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      
+      @media (max-width: 573px) {
+        & {
+          flex-direction: column;
+        }
+      }
+    }
   }
 }
 
