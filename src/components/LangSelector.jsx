@@ -3,8 +3,8 @@ import classNames from "classnames"
 
 export default function LangSelector({ showLangs, setShowLangs, lang, setLang }) {
   const reactiveClasses = classNames('lang-dropdown__dropdown',  { 'w3-show': showLangs })
-  const selectedEng = classNames({ 'selected-lang': lang === 'en' })
-  const selectedEsp = classNames({ 'selected-lang': lang === 'es' })
+  const selectedLang = lang === 'en' ? 'En' : 'Es'
+
   function changeState() {
     setShowLangs(!showLangs)
   }
@@ -19,20 +19,25 @@ export default function LangSelector({ showLangs, setShowLangs, lang, setLang })
   }
   return (
     <div className="lang-dropdown">
-      <button className="lang-dropdown__btn" onClick={ () => changeState() } title="Change language">
-        <i className="fa-solid fa-globe"></i>
-      </button>
+      { !showLangs &&
+        <button className="lang-dropdown__btn" onClick={ () => changeState() } title="Change language">
+          { selectedLang }
+          <i className="fa-solid fa-chevron-down w3-small"></i>
+        </button>
+      }
+      { showLangs &&
+        <button className="lang-dropdown__btn" onClick={ () => changeState() } title="Change language">
+          { selectedLang }
+          <i className="fa-solid fa-chevron-up w3-small"></i>
+        </button>
+      }
       <div className={ reactiveClasses }>
-        <button type="button" className="lang-btn" onClick={ ($evt) => changeLang($evt, 'en') }>
-          <span className={ selectedEng }>
-            Eng
-          </span>
-        </button>
-        <button type="button" className="lang-btn" onClick={ ($evt) => changeLang($evt, 'es') }>
-          <span className={ selectedEsp }>
-            Esp
-          </span>
-        </button>
+        { lang === 'en' &&
+          <a href="#" className="btn" onClick={ ($evt) => changeLang($evt, 'es') }>Es</a>
+        }
+        { lang === 'es' &&
+          <a href="#" className="btn" onClick={ ($evt) => changeLang($evt, 'en') }>En</a>
+        }
       </div>
     </div>
   )

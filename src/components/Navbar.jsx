@@ -15,6 +15,7 @@ export default function Navbar({ showNav, setShowNav }) {
       <button
         className="navbar__btn"
         onClick={ () => changeState() }
+        title="Hide options"
       >
         <i className="fa fa-remove"></i>
       </button>

@@ -5,6 +5,14 @@ body {
   font-family: 'Inconsolata', monospace;
 }
 
+.btn-nav-bg-light {
+  @extend .w3-white;
+}
+
+.btn-nav-bg-dark {
+  background-color: #041C32 !important;
+}
+
 .wa-icon-color {
   color: #3db44c;
 }
@@ -84,34 +92,45 @@ body {
   margin-left: 40%;
 
   &__nav-toggle {
-    @extend .w3-top, .w3-white, .w3-xxlarge, .w3-text-grey;
-    width: auto;
-    right: 0;
-    transition-duration: 1s;
+    @extend .w3-xlarge;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 1;
 
-    .button {
-      @extend .w3-button, .w3-hover-text-black, .w3-xlarge;
-      transition-duration: 1s;
-    }
+    .nav-wrapper {
+      @extend .w3-right;
 
-    .theme-button {
-      @extend .w3-button, .w3-hover-text-black, .w3-xlarge;
-      color: #04293A;
-      width: 100%;
-    }
+      &__bar {
+        @extend .w3-bar;
 
-    .lang-dropdown {
-      @extend .w3-dropdown-click;
-      &__btn {
-        @extend .w3-button, .w3-hover-text-black, .w3-xlarge;
-        transition-duration: 1s;
-      }
+        .btn {
+          @extend .w3-bar-item, .w3-button;
+          transition-duration: 1s;
+          &:hover {
+            background-color: unset !important;
+          }
+        }
 
-      &__dropdown {
-        @extend .w3-dropdown-content, .w3-bar-block, .w3-border;
+        .lang-dropdown {
+          @extend .w3-dropdown-click;
+          
+          &__btn {
+            @extend .w3-button;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 5px;
+          }
 
-        .lang-btn {
-          @extend .w3-bar-item, .w3-button, .w3-medium;
+          &__dropdown {
+            @extend .w3-dropdown-content, .w3-bar-block, .w3-card-4;
+            min-width: auto !important;
+            .btn {
+              @extend .w3-bar-item, .w3-button, .w3-white;
+            }
+          }
+
         }
       }
     }
@@ -284,6 +303,13 @@ body {
   }
 }
 
+.content__nav-toggle .nav-wrapper__bar .lang-dropdown:hover,
+.content__nav-toggle .nav-wrapper__bar .lang-dropdown__btn:hover,
+.content__nav-toggle .nav-wrapper__bar .lang-dropdown:hover > .lang-dropdown__btn:first-child {
+  background-color: unset !important;
+  color: unset !important;
+}
+
 // Themes
 #light {
   background-color: #FFFF;
@@ -296,26 +322,19 @@ body {
   transition-duration: 1s;
 }
 
-#dark .content__nav-toggle {
-  background-color: #041C32 !important;
+#dark .content__nav-toggle .nav-wrapper__bar .btn {
+  // background-color: #041C32 !important;
+  background-color: unset !important;
   transition-duration: 1s;
 }
 
-#dark .content__nav-toggle .button, #dark .content__nav-toggle .lang-dropdown, #dark .content__nav-toggle .theme-button {
-  color: #ECB365 !important;
-  transition-duration: 1s;
+#dark .content__nav-toggle .nav-wrapper__bar .btn:hover {
+  color: unset !important;
 }
 
-#dark .lang-dropdown__dropdown {
+#dark .content__nav-toggle .nav-wrapper__bar .lang-dropdown__dropdown .btn {
   background-color: #064663 !important;
-  border-color: #04293A !important;
-  color: #FFFF !important;
-  transition-duration: 1s;
-}
-
-#dark .selected-lang {
-  border-color: #ECB365 !important;
-  transition-duration: 1s;
+  color: white !important;
 }
 
 #dark .resume-btn {
@@ -324,15 +343,13 @@ body {
   transition-duration: 1s;
 }
 
-#dark .content__nav-toggle .button,
-#dark .content__nav-toggle .lang-dropdown__btn,
 #dark .content__about-me,
 #dark .content__portfolio,
 #dark .content__skills,
 #dark .content__contact,
 #dark .content__footer {
   color: #FFFF !important;
-  transition-duration: 1s;
+  // transition-duration: 1s;
 }
 
 #dark .content__footer {

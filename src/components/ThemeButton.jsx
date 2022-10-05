@@ -6,12 +6,20 @@ export default function ThemeButton() {
   return (
     <>
       {theme === 'light' &&
-        <button type="button" className="theme-button" title="Change to dark theme" onClick={ toggleTheme }>
+        <button
+          className="btn"
+          title="Change to dark theme"
+          onClick={ toggleTheme }
+        >
           <i className="fa-solid fa-moon"></i>
         </button>
       }
       {theme === 'dark' &&
-        <button type="button" className="theme-button" title="Change to light theme" onClick={ toggleTheme }>
+        <button
+          className="btn"
+          title="Change to light theme"
+          onClick={ toggleTheme }
+        >
           <i className="fa-solid fa-sun"></i>
         </button>
       }
