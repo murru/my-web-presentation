@@ -7,7 +7,7 @@ export default function ThemeButton() {
     <>
       {theme === 'light' &&
         <button
-          className="btn"
+          className="btn bg-theme-btn"
           title="Change to dark theme"
           onClick={ toggleTheme }
         >
@@ -16,7 +16,7 @@ export default function ThemeButton() {
       }
       {theme === 'dark' &&
         <button
-          className="btn"
+          className="btn bg-theme-btn"
           title="Change to light theme"
           onClick={ toggleTheme }
         >

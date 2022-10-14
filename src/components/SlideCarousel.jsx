@@ -1,13 +1,14 @@
 import React from "react"
-import engOne from '../assets/eng-1.jpg'
-import engTwo from '../assets/eng-2.jpg'
-import engThree from '../assets/eng-3.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 
-export default function SlideCarousel({ mobile }) {
-
+export default function SlideCarousel({ pics, mobile }) {
+  let images = null
   if (mobile) {
+
+    images = pics.map((pic, i) => {
+      return <img key={ i } className="mobile-carousel-img" src={ pic.url } alt={ pic.alt } />
+    })
     return (
       <Carousel
         autoPlay={ true }
@@ -19,12 +20,14 @@ export default function SlideCarousel({ mobile }) {
         selectedItem={ 0 }
         className="mobile-carousel"
       >
-        <img className="mobile-carousel-img" src={ engOne } alt="" />
-        <img className="mobile-carousel-img" src={ engTwo } alt="" />
-        <img className="mobile-carousel-img" src={ engThree } alt="" />
+        { images }
       </Carousel>
     )
   } else {
+
+    images = pics.map((pic, i) => {
+      return <div key={ i } className="img-carousel" style={{ backgroundImage: `url(${pic.url})` }} alt={ pic.alt }></div>
+    })
     return (
       <Carousel
         autoPlay={ true }
@@ -36,9 +39,7 @@ export default function SlideCarousel({ mobile }) {
         selectedItem={ 0 }
         className="sidebar"
       >
-        <div className="img-carousel" style={{ backgroundImage: `url(${engOne})` }}></div>
-        <div className="img-carousel" style={{ backgroundImage: `url(${engTwo})` }}></div>
-        <div className="img-carousel" style={{ backgroundImage: `url(${engThree})` }}></div>
+        { images }
       </Carousel>
     )
   }

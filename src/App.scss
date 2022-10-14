@@ -29,6 +29,10 @@ body {
   color: #0A66C2;
 }
 
+.bg-theme-btn {
+  color: #04293A !important;
+}
+
 .w3-row-padding img { margin-bottom: 12px }
 
 .carousel-slider, .slider-wrapper, .slider {
@@ -75,7 +79,12 @@ body {
 
   &__btn {
     @extend .w3-button, .w3-black, .w3-xxxlarge, .w3-display-topright;
-    padding: 0 12px
+    padding: 0 12px;
+
+    &:hover {
+      background-color: unset !important;
+      color: unset !important;
+    }
   }
 
   &__options {
@@ -102,11 +111,11 @@ body {
       @extend .w3-right;
 
       &__bar {
-        @extend .w3-bar;
+        @extend .w3-bar, .w3-white;
+        transition-duration: 1s;
 
         .btn {
           @extend .w3-bar-item, .w3-button;
-          transition-duration: 1s;
           &:hover {
             background-color: unset !important;
           }
@@ -243,7 +252,7 @@ body {
       grid-template-columns: repeat(3, 1fr);
       align-items: center;
       justify-items: center;
-      gap: 1em;
+      gap: 2em;
       .logo {
         height: 60px;
         width: auto;
@@ -322,10 +331,17 @@ body {
   transition-duration: 1s;
 }
 
-#dark .content__nav-toggle .nav-wrapper__bar .btn {
-  // background-color: #041C32 !important;
-  background-color: unset !important;
+#dark .content__nav-toggle .nav-wrapper__bar {
+  background-color: #041C32 !important;
+  color: white !important;
   transition-duration: 1s;
+}
+#dark .content__nav-toggle .nav-wrapper__bar .btn {
+  background-color: unset !important;
+}
+
+#dark .bg-theme-btn {
+  color: #ECB365 !important;
 }
 
 #dark .content__nav-toggle .nav-wrapper__bar .btn:hover {
@@ -349,7 +365,7 @@ body {
 #dark .content__contact,
 #dark .content__footer {
   color: #FFFF !important;
-  // transition-duration: 1s;
+  transition-duration: 1s;
 }
 
 #dark .content__footer {

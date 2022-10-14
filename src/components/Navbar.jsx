@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 
-export default function Navbar({ showNav, setShowNav }) {
+export default function Navbar({ list, showNav, setShowNav }) {
   const reactiveClasses = classNames('navbar',  { 'hidden-navbar': !showNav, 'visible-navbar': showNav })
   function changeState() {
     setShowNav(!showNav)
@@ -10,6 +10,10 @@ export default function Navbar({ showNav, setShowNav }) {
   function closeNav() {
     setShowNav(false)
   }
+
+  const items = list.map((item, i) => {
+    return <a key={ `item-${i}` } href={ item.to } className="link" onClick={ () => closeNav() }>{ item.option }</a>
+  })
   return (
     <nav className={ reactiveClasses } id="mySidebar">
       <button
@@ -20,11 +24,7 @@ export default function Navbar({ showNav, setShowNav }) {
         <i className="fa fa-remove"></i>
       </button>
       <div className="navbar__options">
-        <a href="#home" className="link" onClick={ () => closeNav() }>Home</a>
-        <a href="#aboutMe" className="link" onClick={ () => closeNav() }>About Me</a>
-        <a href="#portfolio" className="link" onClick={ () => closeNav() }>Portfolio</a>
-        <a href="#skills" className="link" onClick={ () => closeNav() }>Skills</a>
-        <a href="#contact" className="link" onClick={ () => closeNav() }>Contact</a>
+        { items }
       </div>
     </nav>
   )

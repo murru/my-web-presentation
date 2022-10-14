@@ -1,7 +1,10 @@
 import React from "react"
 import classNames from "classnames"
+import { LangContext } from "../context/LangContext"
+import { useContext } from "react"
 
-export default function LangSelector({ showLangs, setShowLangs, lang, setLang }) {
+export default function LangSelector({ showLangs, setShowLangs }) {
+  const { lang, toggleLang } = useContext(LangContext)
   const reactiveClasses = classNames('lang-dropdown__dropdown',  { 'w3-show': showLangs })
   const selectedLang = lang === 'en' ? 'En' : 'Es'
 
@@ -10,7 +13,7 @@ export default function LangSelector({ showLangs, setShowLangs, lang, setLang })
   }
 
   function changeLang($evt, nl) {
-    setLang(nl)
+    toggleLang(nl)
     closeNav()
   }
 
@@ -33,9 +36,9 @@ export default function LangSelector({ showLangs, setShowLangs, lang, setLang })
       }
       <div className={ reactiveClasses }>
         { lang === 'en' &&
-          <a href="#" className="btn" onClick={ ($evt) => changeLang($evt, 'es') }>Es</a>
+          <a href="#" className="btn" onClick={ ($evt) => changeLang($evt, 'es-VE') }>Es</a>
         }
-        { lang === 'es' &&
+        { lang === 'es-VE' &&
           <a href="#" className="btn" onClick={ ($evt) => changeLang($evt, 'en') }>En</a>
         }
       </div>
