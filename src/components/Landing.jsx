@@ -10,6 +10,7 @@ import Contact from './Contact'
 import Footer from './Footer'
 import { LangContext } from '../context/LangContext'
 import { ThemeContext } from '../context/ThemeContext'
+import Loading from './Loading'
 
 import { gql, useQuery } from '@apollo/client'
 import { useContext, useState } from 'react'
@@ -56,8 +57,7 @@ export default function Landing() {
     }
   `
   const { loading, error, data } = useQuery(LANDING)
-  
-  if (loading) return <p>Loading...</p>
+  if (loading) return <Loading />
   if (error) {
     return <p>Error! =/</p>
   } else {

@@ -12,15 +12,32 @@ const client = new ApolloClient({
 })
 
 export default function App() {
-  const [theme, setTheme] = useState('light')
-  const [lang, setLang] = useState('en')
+  let startTheme = null
+  let startLang = null
 
-  const toggleTheme = () => {
-    setTheme((curr) => (curr === 'light' ? 'dark' : 'light'))
+  if (sessionStorage.getItem('themeOpt')) {
+    startTheme = sessionStorage.getItem('themeOpt')
+  } else {
+    startTheme = 'light'
+  }
+
+  if (sessionStorage.getItem('themeLang')) {
+    startLang = sessionStorage.getItem('themeLang')
+  } else {
+    startLang = 'en'
+  }
+
+  const [theme, setTheme] = useState(startTheme)
+  const [lang, setLang] = useState(startLang)
+
+  const toggleTheme = (themeToSet) => {
+    setTheme(themeToSet)
+    sessionStorage.setItem('themeOpt',themeToSet)
   }
 
   const toggleLang = (langToSet) => {
     setLang(langToSet)
+    sessionStorage.setItem('themeLang', langToSet)
   }
 
   return (
