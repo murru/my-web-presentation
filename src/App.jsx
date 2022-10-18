@@ -15,14 +15,14 @@ export default function App() {
   let startTheme = null
   let startLang = null
 
-  if (sessionStorage.getItem('themeOpt')) {
-    startTheme = sessionStorage.getItem('themeOpt')
+  if (localStorage.getItem('themeOpt')) {
+    startTheme = localStorage.getItem('themeOpt')
   } else {
     startTheme = 'light'
   }
 
-  if (sessionStorage.getItem('themeLang')) {
-    startLang = sessionStorage.getItem('themeLang')
+  if (localStorage.getItem('themeLang')) {
+    startLang = localStorage.getItem('themeLang')
   } else {
     startLang = 'en'
   }
@@ -32,12 +32,12 @@ export default function App() {
 
   const toggleTheme = (themeToSet) => {
     setTheme(themeToSet)
-    sessionStorage.setItem('themeOpt',themeToSet)
+    localStorage.setItem('themeOpt',themeToSet)
   }
 
   const toggleLang = (langToSet) => {
     setLang(langToSet)
-    sessionStorage.setItem('themeLang', langToSet)
+    localStorage.setItem('themeLang', langToSet)
   }
 
   return (
